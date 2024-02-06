@@ -11,7 +11,7 @@ export default function App() {
   const [totalPages,setTotalPages] = useState(0)
   const fetchMovies =async (page)=>{
    try {
-    const reponse =await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${page}`);
+    const reponse =await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=31ff7e91a28d485093a2c0e85efae4e4&language=en-US&page=${page}`);
     const result = await reponse.json()
     setMovies(result.results);
     setTotalPages(result.total_pages);
@@ -25,7 +25,7 @@ export default function App() {
   },[currentPage])
   const handleSearch = async (query)=>{
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=31ff7e91a28d485093a2c0e85efae4e4`);
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=31ff7e91a28d485093a2c0e85efae4e4&include_adult=false&language=en-US&page=1`);
       const result = await response.json();
       setMovies(result.results);
       setTotalPages(result.total_pages);
