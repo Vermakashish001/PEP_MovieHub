@@ -127,18 +127,10 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-/* .homebtns{
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #474787;
-  border-radius: 5px;
-}*/
+
 .homebtns {
   display: flex;
-  justify-content: space-around; /* Adjust as needed */
+  justify-content: space-around; 
 }
 
 
