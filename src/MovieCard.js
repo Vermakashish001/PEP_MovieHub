@@ -1,8 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {FaHeart,FaRegHeart} from "react-icons/fa"
 export default function MovieCard({movie}) {
-    const [isFavorite,setIsFavorite] = useState(true)
+    
     const {id,poster_path,title,release_date,vote_count,vote_average}= movie;
+    const [isFavorite,setIsFavorite] = useState(
+        JSON.parse(localStorage.getItem('favoriteMovies'))?.some(([_,movieId])=>movieId === id) || false
+    )
+  const toggleFavorite =()=>{
+    setIsFavorite((prev)=>!prev)
+  }
+  useEffect(()=>{
+    const favMovies =JSON.parse(localStorage.getItem("favoriteMovies")) || []
+    if(isFavorite){
+         localStorage.setItem('favoriteMovies', JSON.stringify([...favMovies, [title,id]]))
+    } else {
+        localStorage.setItem('favoriteMovies',
+        JSON.stringify(favMovies.filter(([_,movieId])=>movieId !== id)))
+    }
+  },[isFavorite,title,id])
 
   return (
     <div>
