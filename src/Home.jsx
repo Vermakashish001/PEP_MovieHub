@@ -7,14 +7,16 @@ export default function Home() {
     
     <div className='homebtns'>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpEIytwvMoIoiEKGU9-tqxI6s4p3E88Lcfyw&usqp=CAU"
+        src="https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=600"
         alt="Movies"
         onClick={() => navigate("/movies")}
+        className="movies-image"
       />
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrQKG7otAOxz4o__M6qGngh8ZgFTkEjl_zxA&usqp=CAU"
-        alt="Tv"
+        src="https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Tv Shows"
         onClick={() => navigate("/tv")}
+        className="tv-image"
       />
     </div>
   )

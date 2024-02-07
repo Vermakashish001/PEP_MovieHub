@@ -127,7 +127,7 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-.homebtns{
+/* .homebtns{
   display: flex;
   gap: 100px;
   justify-content: center;
@@ -135,20 +135,19 @@ nav ul li a:hover::after {
   height: 100vh;
   background-color: #474787;
   border-radius: 5px;
+}*/
+.homebtns {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
 }
-.homebtns button:hover {
-  background-color: #9C9DA6; 
-}
-.homebtns button{
-  padding: 200px;
-  font-size: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #AAABB8;
-  color: #474787;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 1.5);
+
+
+.movies-image,.tv-image {
+  width: 100%;
+  height: 100%;
+  margin: none;
+  padding: none;
+  
 }
 .pagination{
   display: flex;
