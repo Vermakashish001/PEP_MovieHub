@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import SearchBar from './SearchBar'
-import MovieList from './MovieList'
-import FavMovie from './FavMovie'
-import Navbar from './Navbar'
-import Home from './Home'
-import Tvlist from './Tvlist'
-import FavTv from './FavTv'
-import Pagination from './Pagination'
+import SearchBar from './SearchBar.jsx'
+import MovieList from './MovieList.jsx'
+import FavMovie from './FavMovie.jsx'
+import Navbar from './Navbar.jsx'
+import Home from './Home.jsx'
+import Tvlist from './Tvlist.jsx'
+import FavTv from './FavTv.jsx'
+import Pagination from './Pagination.jsx'
 
 export default function App() {
   const [movies,setMovies]=useState([])
@@ -18,7 +18,7 @@ export default function App() {
   const [totalSeriesPages,setTotalSeriesPages] = useState(0)
   const fetchMovies =async (page)=>{
    try {
-    const reponse =await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${page}`);
+    const reponse =await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=8291c0a5a15c99a6e3e31dc92e38eefa&language=en-US&page=${page}`);
     const result = await reponse.json()
     setMovies(result.results);
     setTotalMoviePages(result.total_pages);
@@ -29,7 +29,7 @@ export default function App() {
   }
   const fetchSeries =async (page)=>{
     try {
-     const reponse =await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${page}`);
+     const reponse =await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=8291c0a5a15c99a6e3e31dc92e38eefa&language=en-US&page=${page}`);
      const result = await reponse.json()
      setSeries(result.results);
      setTotalMoviePages(result.total_pages);
@@ -44,28 +44,28 @@ export default function App() {
   },[currentMoviePage,currentSeriesPage])
   const handleMovieSearch = async (query)=>{
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`);
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=8291c0a5a15c99a6e3e31dc92e38eefa&include_adult=false&language=en-US&page=1`);
       const result = await response.json();
       setMovies(result.results);
       setTotalMoviePages(result.total_pages);
-      // setCurrentPage(1);
+      setCurrentPage(1);
 
     } catch (error) {
       console.log("error",error)
     }
   }
-  // const handleTvSearch = async (query)=>{
-  //   try {
-  //     const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${query}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`);
-  //     const result = await response.json();
-  //     setMovies(result.results);
-  //     setTotalMoviePages(result.total_pages);
-  //     // setCurrentPage(1);
+  const handleTvSearch = async (query)=>{
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${query}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`);
+      const result = await response.json();
+      setMovies(result.results);
+      setTotalMoviePages(result.total_pages);
+      setCurrentPage(1);
 
-  //   } catch (error) {
-  //     console.log("error",error)
-  //   }
-  // }
+    } catch (error) {
+      console.log("error",error)
+    }
+  }
   const handlePageChange = (page)=>{
     setCurrentMoviePage(page)
   }

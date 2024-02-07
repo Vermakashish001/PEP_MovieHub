@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MovieList from './MovieList'
+import MovieList from './MovieList.jsx'
 
 export default function FavMovie() {
   const [fav,setFav]= useState([])

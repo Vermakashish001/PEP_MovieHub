@@ -15,7 +15,7 @@ export default function Tvlist({series}) {
         setSortOrder((prev)=>(prev === "asc"?"desc":"asc"))
     }
   return (
-    <div >
+    <div className="body" >
         <div>
             <button onClick={handleSort}>
                 Sort by vote average ({sortOrder==="asc"?"Ascending":"Descending"})

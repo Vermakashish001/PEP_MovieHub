@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar.jsx'
 export default function Navbar({onSearch}) {
   return (
     <div>
         <nav className='navbar'>
-            <h1>ADFAR TMBD</h1>
+            <h1>MovieMaven Pro</h1>
             <ul className='nav'>
                 <li>
                     <Link to="/">Home</Link>
