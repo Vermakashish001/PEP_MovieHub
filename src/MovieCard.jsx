@@ -32,9 +32,9 @@ export default function MovieCard({movie}) {
                 <div>
                     <p>Release: {release_date}</p>
                     {!isFavorite ? (
-                        <FaHeart className='fav-icon' color='red'/>
+                        <FaHeart className='fav-icon' color='red' onClick={toggleFavorite} />
                     ):(
-                        <FaRegHeart className='fav-icon'/>
+                        <FaRegHeart className='fav-icon'onClick={toggleFavorite} />
                     )}
                 </div>
             </section>

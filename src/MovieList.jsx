@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MovieCard from './MovieCard.jsx'
+import MovieCard from './MovieCard.'
 import "./App.css"
 export default function MovieList({movies}) {
     const [sortOrder,setSortOrder] = useState('asc')
@@ -16,11 +16,11 @@ export default function MovieList({movies}) {
   return (
     <div className="full" >
         <div>
-            <button onClick={handleSort}>
-                Sort by vote average ({sortOrder==="asc"?"Ascending":"Descending"})
+            <button className="sort-button" onClick={handleSort}>
+                Sort by vote average ({sortOrder === "asc" ? "Ascending" : "Descending"})
             </button>
-            
         </div>
+
         <ul className='movielist'>
             {sortedMovies.map((movie)=>
             <MovieCard  key={movie.id} movie = {movie}/>)}

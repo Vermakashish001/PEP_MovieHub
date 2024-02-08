@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import "./App.css"
 import TvCard from './TvCard'
 export default function Tvlist({series}) {
@@ -17,7 +16,7 @@ export default function Tvlist({series}) {
   return (
     <div className="fulll" >
         <div>
-            <button onClick={handleSort}>
+            <button className="sort-button" onClick={handleSort}>
                 Sort by vote average ({sortOrder==="asc"?"Ascending":"Descending"})
             </button>
             

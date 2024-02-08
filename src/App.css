@@ -26,7 +26,8 @@ body {
 }
 .title{
   font-size: 25px;
-  color:  #AAABB8;
+  font-family: "roboto";
+  color:  #ffffff;
 }
 .fav-heart{
   display: flex;
@@ -36,11 +37,16 @@ body {
 }
 .fav-heart p{
   font-weight: 700;
+  font-size: 18px;
+  font-family: "roboto";
+  color: black;
 }
 .fav-icon{
   height: 50px;
   width: 50px;
 }
+
+
 .navbar{
   display: flex;
   justify-content: space-around;
@@ -64,7 +70,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   font-size: 18px;
-  color: whitesmoke;
+  color: #ffffff;
   position: relative;
   transition: color 0.3s; 
 }
@@ -94,6 +100,7 @@ nav ul li a:hover::after {
 }
 .navbar h1 {
   font-size: 24px;
+  font-family: "roboto";
   color: #ffffff; 
   margin: 0;
   padding: 10px;
@@ -103,29 +110,12 @@ nav ul li a:hover::after {
 }
 
 .search input {
-  background-color: whitesmoke; 
+  background-color: #ffffff; 
   padding: 10px; 
   margin: 0 5px; 
   border-radius: 5px;
 }
 
-.search button {
-  background-color: transparent;
-  color: whitesmoke; 
-  font-family: 'Roboto';
-  font-size: 18px;
-  padding: 10px; 
-  margin: 0 5px; 
-  border-radius: 5px;
-  border: none; 
-  cursor: pointer;
-}
-.search button :hover {
-  color: #008170; 
-}
-.search button:hover::after {
-  width: 100%;
-}
 
 
 .homebtns {
@@ -161,6 +151,36 @@ nav ul li a:hover::after {
 }
 .pagination button:disabled{
   background: none;
-  background-color: #A9D6E5;
+  background-color: #0a0909f5;
  
 }
+.sort-button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "roboto";
+  position: relative;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.sort-button::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(0,91,65,1) 31%, rgba(0,129,112,0.8988603988603988) 100%);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.5s;
+}
+
+.sort-button:hover {
+  color: #008170; 
+}
+
+.sort-button:hover::after {
+  width: 100%; 
+}
+
