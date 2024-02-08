@@ -31,7 +31,7 @@ export default function TvCard({tv}) {
                 <div>
                     <p>Release: {first_air_date}</p>
                     {isFavorite ? (
-                        <FaHeart className='fav-icon' color='red' onClick={toggleFavorite}/>
+                        <FaHeart className='fav-icon'  onClick={toggleFavorite}/>
                     ):(
                         <FaRegHeart className='fav-icon' onClick={toggleFavorite}/>
                     )}
