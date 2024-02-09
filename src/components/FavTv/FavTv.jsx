@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './FavTv.css';
 import Tvlist from '../TvList/Tvlist' 
 
 export default function FavTv() {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import MovieList from '../MovieList/MovieList'
+import './FavMovie.css';
 
 export default function FavMovie() {
   const [fav,setFav]= useState([])

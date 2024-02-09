@@ -1,0 +1,23 @@
+.pagination{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-color: #0a0909f5;
+}
+.pagination button{
+  padding: 5px 35px;
+  border: none;
+  border-radius: 5px;
+  background: rgb(0,91,65);
+  background: linear-gradient(90deg, rgba(0,91,65,1) 31%, rgba(0,129,112,0.8988603988603988) 100%);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.pagination button:disabled{
+  background: none;
+  background-color: #0a0909f5;
+ 
+}

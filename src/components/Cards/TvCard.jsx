@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {FaHeart,FaRegHeart} from "react-icons/fa"
+import "./TvCard.css";
 export default function TvCard({tv}) {
     
     const {id,poster_path,name,first_air_date,vote_count,vote_average}= tv;

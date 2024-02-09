@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {FaHeart,FaRegHeart} from "react-icons/fa"
+import './MovieCard.css';
 export default function MovieCard({movie}) {
     
     const {id,poster_path,title,release_date,vote_count,vote_average}= movie;
