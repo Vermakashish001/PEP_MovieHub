@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import SearchBar from './SearchBar.jsx'
-import MovieList from './MovieList.jsx'
-import FavMovie from './FavMovie.jsx'
-import Navbar from './Navbar.jsx'
-import Home from './Home.jsx'
-import Tvlist from './Tvlist.jsx'
-import FavTv from './FavTv.jsx'
-import Pagination from './Pagination.jsx'
+import Home from './components/Home/Home'
+import MovieList from './components/MovieList/MovieList'
+import Navbar from './components/Navbaar/Navbar'
+import Pagination from './components/Pagination/Pagination'
+import Tvlist from './components/TvList/Tvlist'
+import FavMovie from './components/FavMovie/FavMovie'
+import FavTv from './components/FavTv/FavTv'
+
+
 
 export default function App() {
   const [movies,setMovies]=useState([])

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Tvlist from './Tvlist.jsx'
+import Tvlist from '../TvList/Tvlist' 
 
 export default function FavTv() {
   const [fav,setFav]= useState([])

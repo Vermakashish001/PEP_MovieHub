@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import MovieCard from './MovieCard.'
-import "./App.css"
+import MovieCard from '../Cards/MovieCard'
+import '../../App.css'
 export default function MovieList({movies}) {
     const [sortOrder,setSortOrder] = useState('asc')
     const sortedMovies = [...movies].sort((a,b)=>{

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import "./App.css"
-import TvCard from './TvCard'
+import TvCard from '../Cards/TvCard'
 export default function Tvlist({series}) {
     const [sortOrder,setSortOrder] = useState('asc')
     const sortedMovies = [...series].sort((a,b)=>{

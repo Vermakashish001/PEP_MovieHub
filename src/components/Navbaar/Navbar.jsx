@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar.jsx'
+import SearchBar from '../SearchBar/SearchBar.jsx'
+import './Navbar.css'
 export default function Navbar({onSearch}) {
-  return (
-    <div>
+  return (  
         <nav className='navbar'>
             <h1>MovieMaven Pro</h1>
             <ul className='nav'>
@@ -25,6 +25,5 @@ export default function Navbar({onSearch}) {
             </ul>
             <SearchBar onSearch={onSearch}/>
         </nav>
-    </div>
   )
 }
