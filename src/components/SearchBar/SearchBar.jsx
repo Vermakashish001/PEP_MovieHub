@@ -8,7 +8,7 @@ export default function SearchBar({onSearch}) {
   return (
     <div className='search'>
       <input type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
-      <button className="sort-button" onClick={handleSearch}>Search</button>
+      <button className="search-button" onClick={handleSearch}>Search</button>
 
     </div>
   )

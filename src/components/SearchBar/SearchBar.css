@@ -4,7 +4,7 @@
   margin: 0 5px; 
   border-radius: 5px;
 }
-.sort-button {
+.search-button{
   background-color: transparent;
   border: none;
   color: #ffffff;
@@ -15,7 +15,7 @@
   cursor: pointer;
 }
   
-.sort-button::after {
+.search-button::after {
   content: "";
   width: 0;
   height: 3px;
@@ -26,10 +26,10 @@
   transition: width 0.5s;
 }
 
-.sort-button:hover {
+.search-button:hover {
   color: #008170; 
 }
 
-.sort-button:hover::after {
+.search-button:hover::after {
   width: 100%; 
 }
