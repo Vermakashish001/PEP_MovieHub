@@ -76,7 +76,7 @@ export default function App() {
       <BrowserRouter>
       <Navbar onSearch={handleMovieSearch}/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<Home movie={movies} series={series}/>}/>
           <Route path="/movie" element={<div>
             <MovieList movies={movies}/>
             <Pagination currentPage={currentMoviePage} totalPages ={totalMoviePages} onPageChange={handlePageChange}/>

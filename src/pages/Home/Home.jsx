@@ -1,24 +1,56 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import './Home.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
-export default function Home() {
-    const navigate = useNavigate()
+import "./Home.css";
+
+export default function Home({ movie, series }) {
+  const navigate = useNavigate();
   return (
-    
-    <div className='homebtns'>
-      <img
-        src="https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=600"
-        alt="Movie"
-        onClick={() => navigate("/movie")}
-        className="movies-image"
-      />
-      <img
-        src="https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg?auto=compress&cs=tinysrgb&w=600"
-        alt="Tv Shows"
-        onClick={() => navigate("/tv")}
-        className="tv-image"
-      />
+    <div className="homebtns">
+      <Carousel
+        className="carousel"
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={1000}
+        showStatus={false}
+        onClickItem={(index) => navigate(`/movie`)}
+        
+      >
+        {movie.map((movie, index) => {
+          return (
+            <div key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
+          );
+        })}
+      </Carousel>
+      <Carousel
+        className="carousel"
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={1000}
+        showStatus={false}
+        onClickItem={(index) => navigate(`/tv`)}
+      >
+        {series.map((serie, index) => {
+          return (
+            <div key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
+                alt={serie.name}
+                onClick={() => navigate(`/tv/${serie.id}`)}
+              />
+            </div>
+          );
+        })}
+      </Carousel>
     </div>
-  )
+  );
 }

@@ -22,17 +22,16 @@ export default function MovieCard({movie}) {
   },[isFavorite,title,id])
 
   return (
-    <div>
-        <li className='card'>
+    <div className='card'>
             <img className='poster' src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt='title'/>
             <h1 className='title'>{title}</h1>
             <section className='fav-heart'>
                 <div className='heart-icon'>
                     <p>Rating: {vote_average}</p>
                     <p>Votes: {vote_count} </p>
+                    <p>Release: {release_date}</p>
                 </div>
                 <div>
-                    <p>Release: {release_date}</p>
                     {!isFavorite ? (
                         <FaHeart className='fav-icon'  onClick={toggleFavorite} />
                     ):(
@@ -40,7 +39,6 @@ export default function MovieCard({movie}) {
                     )}
                 </div>
             </section>
-        </li>
     </div>
   )
 }

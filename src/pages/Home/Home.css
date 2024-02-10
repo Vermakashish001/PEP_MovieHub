@@ -1,15 +1,14 @@
-.homebtns {
+.homebtns{
+    height: 90vh;
     display: flex;
-    justify-content: space-around; 
-    height: 100vh;
-    margin: 0%;
+    background: white;
 }
-
-img{
+.homebtns .carousel{
+    height: 90vh;
     width: 50vw;
-    height: 91vh;
-    object-fit: cover;
+}
+.homebtns .carousel:hover{
+    width: 75vw;
+    transition: all 0.5s ease-in-out;
 
-    padding: 0%;
-    margin: 0%;
 }
