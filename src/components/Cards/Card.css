@@ -1,5 +1,6 @@
 .card{
-    border: 3px solid var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
     padding: 30px;
     width: 200px;
     height: 250px;
@@ -28,21 +29,12 @@
     font-size: 20px;
     font-weight: 600;
 }
-.card .rating{
-    font-size: 15px;
-    font-weight: 500;
-}
-.card .fav-heart{
+.card .likebtn{
     position: absolute;
-    display: flex;
-    margin: 220px 0 0 0;
-    flex-direction: column;
+    bottom: 8px;
+    right: 10px;
 }
-.card .fav-heart .heart-icon{
-    font-size: 12px;
-    display: flex;
-    margin: 0%;
-}
-.card .fav-heart p{
-    margin: 0;
+.card .likebtn .fav-icon{
+    font-size: 30px;
+
 }
