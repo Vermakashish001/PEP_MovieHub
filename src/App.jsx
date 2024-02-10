@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './components/Home/Home'
-import MovieList from './components/MovieList/MovieList'
+import Home  from './pages/Home/Home';
+import MovieList from './pages/MovieList/MovieList'
 import Navbar from './components/Navbaar/Navbar'
 import Pagination from './components/Pagination/Pagination'
-import Tvlist from './components/TvList/Tvlist'
-import FavMovie from './components/FavMovie/FavMovie'
-import FavTv from './components/FavTv/FavTv'
+import Tvlist from './pages/TvList/Tvlist'
+import FavMovie from './pages/FavMovie/FavMovie'
+import FavTv from './pages/FavTv/FavTv'
 
 
 
@@ -77,7 +77,7 @@ export default function App() {
       <Navbar onSearch={handleMovieSearch}/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path="/movies" element={<div>
+          <Route path="/movie" element={<div>
             <MovieList movies={movies}/>
             <Pagination currentPage={currentMoviePage} totalPages ={totalMoviePages} onPageChange={handlePageChange}/>
           </div>} />

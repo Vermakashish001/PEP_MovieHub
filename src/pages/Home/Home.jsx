@@ -9,8 +9,8 @@ export default function Home() {
     <div className='homebtns'>
       <img
         src="https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=600"
-        alt="Movies"
-        onClick={() => navigate("/movies")}
+        alt="Movie"
+        onClick={() => navigate("/movie")}
         className="movies-image"
       />
       <img

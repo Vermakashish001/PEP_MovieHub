@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import MovieCard from '../Cards/MovieCard'
-import '../../App.css'
-import './MovieList.css'
-export default function MovieList({movies}) {
+import TvCard from '../../components/Cards/TvCard'
+import './Tvlist.css';
+export default function Tvlist({series}) {
     const [sortOrder,setSortOrder] = useState('asc')
-    const sortedMovies = [...movies].sort((a,b)=>{
+    const sortedMovies = [...series].sort((a,b)=>{
       if(sortOrder === "asc"){
         return a.vote_count - b.vote_count
       } else{
@@ -15,16 +14,16 @@ export default function MovieList({movies}) {
         setSortOrder((prev)=>(prev === "asc"?"desc":"asc"))
     }
   return (
-    <div className="full" >
+    <div className="fulll" >
         <div>
             <button className="sort-button" onClick={handleSort}>
-                Sort by vote average ({sortOrder === "asc" ? "Ascending" : "Descending"})
+                Sort by vote average ({sortOrder==="asc"?"Ascending":"Descending"})
             </button>
+            
         </div>
-
         <ul className='movielist'>
-            {sortedMovies.map((movie)=>
-            <MovieCard  key={movie.id} movie = {movie}/>)}
+            {sortedMovies.map((tv)=>
+            <TvCard  key={tv.id} tv = {tv}/>)}
         </ul>
     
     </div>

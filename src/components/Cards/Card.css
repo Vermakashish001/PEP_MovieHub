@@ -1,0 +1,36 @@
+.poster {
+    width: 250px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); 
+}
+.title{
+    font-size: 25px;
+    color:  #ffffff;
+}
+.fav-heart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.fav-heart p{
+    font-weight: 700;
+    font-size: 18px;
+    color: #0b0000;
+}
+.fav-icon {
+    height: 50px;
+    width: 50px;
+    color: #df0707; 
+
+}
+.card{
+    background-color:#780909;
+    border-radius: 8px;
+    padding: 35px;
+    list-style: none;
+    height: 85%;
+    width: 75%;
+}
