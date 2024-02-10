@@ -3,42 +3,36 @@ import {FaHeart,FaRegHeart} from "react-icons/fa"
 import './Card.css'
 
 export default function TvCard({tv}) {
-    
-    const {id,poster_path,name,first_air_date,vote_count,vote_average}= tv;
-    const [isFavorite,setIsFavorite] = useState(
-        JSON.parse(localStorage.getItem('favoriteSeries'))?.some(([_,movieId])=>movieId === id) || false
-    )
-  const toggleFavorite =()=>{
-    setIsFavorite((prev)=>!prev)
-  }
-  useEffect(()=>{
-    const favSeries =JSON.parse(localStorage.getItem("favoriteSeries")) || []
-    if(isFavorite){
-         localStorage.setItem('favoriteSeries', JSON.stringify([...favSeries, [name,id]]))
-    } else {
-        localStorage.setItem('favoriteSeries',
-        JSON.stringify(favSeries.filter(([_,tvId])=>tvId !== id)))
+        
+        const {id,poster_path,name,vote_count,vote_average}= tv;
+        const [isFavorite,setIsFavorite] = useState(
+            JSON.parse(localStorage.getItem('favoriteTv'))?.some(([_,tvId])=>tvId === id) || false
+        )
+    const toggleFavorite =()=>{
+        setIsFavorite((prev)=>!prev)
     }
-  },[isFavorite,name,id])
+    useEffect(()=>{
+        const favTv =JSON.parse(localStorage.getItem("favoriteTv")) || []
+        if(isFavorite){
+            localStorage.setItem('favoriteTv', JSON.stringify([...favTv, [name,id]]))
+        } else {
+            localStorage.setItem('favoriteTv',
+            JSON.stringify(favTv.filter(([_,tvId])=>tvId !== id)))
+        }
+    },[isFavorite,name,id])
+    
   return (
     <div>
         <li className='card'>
-            <img className='poster' height="150" width="150" src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt='title'/>
+            <img className='poster' src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt='title'/>
             <h1 className='title'>{name}</h1>
-            <section className='fav-heart'>
-                <div className='heart-icon'>
-                    <p>Rating: {vote_average}</p>
-                    <p>Votes: {vote_count} </p>
-                </div>
-                <div>
-                    <p>Release: {first_air_date}</p>
-                    {isFavorite ? (
-                        <FaHeart className='fav-icon'  onClick={toggleFavorite}/>
+                <div className='likebtn'>
+                    {!isFavorite ? (
+                        <FaRegHeart className='fav-icon-white'  onClick={toggleFavorite}/>
                     ):(
-                        <FaRegHeart className='fav-icon' onClick={toggleFavorite}/>
+                        <FaHeart className='fav-icon' onClick={toggleFavorite}/>
                     )}
                 </div>
-            </section>
         </li>
     </div>
   )

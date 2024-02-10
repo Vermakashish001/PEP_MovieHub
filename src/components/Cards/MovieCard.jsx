@@ -27,7 +27,7 @@ export default function MovieCard({movie}) {
             <h1 className='title'>{title}</h1>
             <div className='likebtn'>
                     {!isFavorite ? (
-                        <FaRegHeart className='fav-icon'  onClick={toggleFavorite} />
+                        <FaRegHeart className='fav-icon-white'  onClick={toggleFavorite} />
                     ):(
                         <FaHeart className='fav-icon'onClick={toggleFavorite} />
                     )}
