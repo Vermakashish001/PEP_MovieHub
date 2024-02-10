@@ -25,20 +25,13 @@ export default function MovieCard({movie}) {
     <div className='card'>
             <img className='poster' src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt='title'/>
             <h1 className='title'>{title}</h1>
-            <section className='fav-heart'>
-                <div className='heart-icon'>
-                    <p>Rating: {vote_average}</p>
-                    <p>Votes: {vote_count} </p>
-                    <p>Release: {release_date}</p>
-                </div>
-                <div>
+            <div>
                     {!isFavorite ? (
                         <FaHeart className='fav-icon'  onClick={toggleFavorite} />
                     ):(
                         <FaRegHeart className='fav-icon'onClick={toggleFavorite} />
                     )}
-                </div>
-            </section>
+            </div>
     </div>
   )
 }
