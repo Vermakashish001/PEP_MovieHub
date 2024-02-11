@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import MovieList from '../MovieList/MovieList'
-import './FavMovie.css';
 
 export default function FavMovie() {
-  const [fav,setFav]= useState([])
+  const [fav,setFav]= useState([]);
   const favoriteMovieIDs = JSON.parse(localStorage.getItem('favoriteMovies')) || []
   const fetchMovies = async() =>{
     try {
@@ -28,11 +27,11 @@ export default function FavMovie() {
   return (
     <div>
       <h1>Favorite Movies</h1>
-      {favoriteMovieIDs.length >= 0?(
+      {favoriteMovieIDs.length > 0?(
         <MovieList movies={fav}/>
-      ):<>
+      ):(
          <h1>No movies selected</h1>
-      </>}
+      )}
     </div>
   )
 }

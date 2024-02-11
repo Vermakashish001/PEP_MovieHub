@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import TvCard from '../../components/Cards/TvCard'
-import './Tvlist.css';
+import './Tvlist.css'
 export default function Tvlist({series}) {
     const [sortOrder,setSortOrder] = useState('asc')
     const sortedMovies = [...series].sort((a,b)=>{
@@ -14,14 +14,13 @@ export default function Tvlist({series}) {
         setSortOrder((prev)=>(prev === "asc"?"desc":"asc"))
     }
   return (
-    <div className="fulll" >
+    <div >
         <div>
-            <button className="sort-button" onClick={handleSort}>
+            <button onClick={handleSort} className='sort-button'>
                 Sort by vote average ({sortOrder==="asc"?"Ascending":"Descending"})
             </button>
-            
         </div>
-        <ul className='movielist'>
+        <ul className='tvlist'>
             {sortedMovies.map((tv)=>
             <TvCard  key={tv.id} tv = {tv}/>)}
         </ul>
