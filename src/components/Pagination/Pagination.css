@@ -6,13 +6,13 @@
 }
 
 .pagination button {
-  width: 70px; /* Adjust the width and height for the desired button size */
+  width: 70px; 
   height: 30px;
-  border: 2px solid #ba0c0c;
-  border-radius: 35%; /* This creates a circle */
+  border: 2px solid var(--main-color);
+  border-radius: 35%; 
   background-color: black;
-  color: white; /* Default background color */
-  margin: 0 5px; /* Adjust the spacing between buttons */
+  color: white; 
+  margin: 0 5px; 
   cursor: pointer;
 }
 
