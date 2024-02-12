@@ -22,15 +22,14 @@
 }
 
 .pagination button:disabled {
-  opacity: 0.3; /* Dim the disabled buttons */
-  /* cursor: not-allowed; Change cursor for disabled buttons */
+  opacity: 0.3;
 }
 
-/* Style for previous and next buttons */
+
 .pagination button:first-child {
-  margin-left: 0; /* Ensure the first button aligns properly */
+  margin-left: 0; 
 }
 
 .pagination button:last-child {
-  margin-right: 0; /* Ensure the last button aligns properly */
+  margin-right: 0; 
 }
