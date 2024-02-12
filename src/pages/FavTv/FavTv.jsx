@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Tvlist from "../TvList/Tvlist";
 import "./FavTv.css";
 export default function FavTv() {
@@ -11,22 +11,21 @@ export default function FavTv() {
         `https://api.themoviedb.org/3/tv/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=1`
       );
       const result = await response.json();
-      return result.results;
+
+      setFav(result.results.filter((series) => {
+        return favoriteSeriesIDs.some(([_, seriesId]) => {
+          return seriesId == series.id
+        })
+      }));
     } catch (error) {
       console.log(error);
-      return [];
     }
   };
-  const renderFavoriteSeries = async () => {
-    const mainTvList = await fetchSeries();
-    const favoriteSeries = mainTvList.filter((series) =>
-      favoriteSeriesIDs.some(([_, tvId]) => tvId === series.id)
-    );
-    return favoriteSeries;
-  };
-  renderFavoriteSeries().then((response) => {
-    setFav(response);
-  });
+  
+  useEffect(() => {
+    fetchSeries();
+  }, [])
+  
   return (
     <div>
       <h1>Favorite TV Series</h1>
