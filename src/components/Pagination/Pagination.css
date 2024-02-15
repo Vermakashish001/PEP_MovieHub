@@ -7,14 +7,21 @@
 }
 
 .pagination button {
-  width: 70px; 
-  height: 30px;
+  width: 30px; 
+  height: 30px;  
   border: 2px solid var(--main-color);
-  border-radius: 35%; 
+  border-radius: 50%;  
   background-color: black;
   color: white; 
   margin: 0 5px; 
   cursor: pointer;
+}
+
+.pagination .nav-prev,
+.pagination .nav-next {
+  border-radius: 2px;
+  height: 50%;
+  width: 6%;
 }
 
 .pagination button:hover {
@@ -25,7 +32,6 @@
 .pagination button:disabled {
   opacity: 0.3;
 }
-
 
 .pagination button:first-child {
   margin-left: 0; 
