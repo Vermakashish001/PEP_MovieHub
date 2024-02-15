@@ -19,7 +19,7 @@ export default function App() {
   const [totalSeriesPages, setTotalSeriesPages] = useState(0)
   const fetchMovies = async (page) => {
     try {
-      const reponse = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${page}`);
+      const reponse = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=1`);
       const result = await reponse.json()
       setMovies(result.results);
       setTotalMoviePages(result.total_pages);
