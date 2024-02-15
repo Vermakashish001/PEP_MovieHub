@@ -40,3 +40,7 @@
 .pagination button:last-child {
   margin-right: 0; 
 }
+.pagination .page-button.active {
+  background-color: #980A0A;
+}
+
