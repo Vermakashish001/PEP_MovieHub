@@ -41,7 +41,7 @@ export default function App() {
   }
   useEffect(() => {
     fetchMovies(currentMoviePage)
-    fetchSeries(currentSeriesPage) // Check this later
+    fetchSeries(currentSeriesPage) 
   }, [currentMoviePage, currentSeriesPage])
   const handleMovieSearch = async (query) => {
     try {
