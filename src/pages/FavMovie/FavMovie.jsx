@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MovieList from '../MovieList/MovieList'
-
+import "./FavMovie.css";
 export default function FavMovie() {
   const [fav, setFav] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
