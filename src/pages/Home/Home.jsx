@@ -66,7 +66,6 @@ export default function Home({ movie, series }) {
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
-                  onClick={() => navigate(`/movie/${movie.id}`)}
                 />
               </div>
             );
@@ -80,7 +79,7 @@ export default function Home({ movie, series }) {
                 <img
                   src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
                   alt={serie.name}
-                  onClick={() => navigate(`/tv/${serie.id}`)}
+                  
                 />
               </div>
             );

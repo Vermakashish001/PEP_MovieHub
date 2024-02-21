@@ -13,13 +13,13 @@ import FavTv from './pages/FavTv/FavTv'
 export default function App() {
   const [movies, setMovies] = useState([])
   const [series, setSeries] = useState([])
-  const [currentMoviePage, setCurrentMoviePage] = useState(100);
+  const [currentMoviePage, setCurrentMoviePage] = useState(1);
   const [currentSeriesPage, setCurrentSeriesPage] = useState(1);
   const [totalMoviePages, setTotalMoviePages] = useState(0)
   const [totalSeriesPages, setTotalSeriesPages] = useState(0)
   const fetchMovies = async (page) => {
     try {
-      const reponse = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=1`);
+      const reponse = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${page}`);
       const result = await reponse.json()
       setMovies(result.results);
       setTotalMoviePages(result.total_pages);
@@ -33,8 +33,7 @@ export default function App() {
       const reponse = await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=8291c0a5a15c99a6e3e31dc92e38eefa&language=en-US&page=${page}`);
       const result = await reponse.json()
       setSeries(result.results);
-      setTotalMoviePages(result.total_pages);
-
+      setTotalSeriesPages(result.total_pages);
     } catch (error) {
       console.log("error", error)
     }
@@ -49,7 +48,7 @@ export default function App() {
       const result = await response.json();
       setMovies(result.results);
       setTotalMoviePages(result.total_pages);
-      setCurrentPage(1);
+      setCurrentMoviePage(1);
 
     } catch (error) {
       console.log("error", error)
@@ -59,9 +58,9 @@ export default function App() {
     try {
       const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${query}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`);
       const result = await response.json();
-      setMovies(result.results);
-      setTotalMoviePages(result.total_pages);
-      setCurrentPage(1);
+      setSeries(result.results);
+      setTotalSeriesPages(result.total_pages);
+      setCurrentSeriesPage(1);
 
     } catch (error) {
       console.log("error", error)
@@ -69,6 +68,7 @@ export default function App() {
   }
   const handlePageChange = (page) => {
     setCurrentMoviePage(page)
+    
   }
   return (
     <div>
@@ -79,10 +79,15 @@ export default function App() {
           <Route path='/' element={<Home movie={movies} series={series} />} />
           <Route path="/movie" element={<div>
             <MovieList movies={movies} />
-            <Pagination currentPage={currentMoviePage} totalPages={totalMoviePages} onPageChange={handlePageChange} />
+            <Pagination page={currentMoviePage} totalPages={totalMoviePages} setPage={handlePageChange} />
           </div>} />
           <Route path='/favmov' element={<FavMovie />} />
-          <Route path='tv' element={<Tvlist series={series} />} />
+          <Route path='tv' element={
+            <div>
+              <Tvlist series={series} />
+              <Pagination page={currentSeriesPage} totalPages={totalSeriesPages} setPage={setCurrentSeriesPage} />
+            </div>
+          } />
           <Route path='/favTv' element={<FavTv />} />
         </Routes>
       </BrowserRouter>

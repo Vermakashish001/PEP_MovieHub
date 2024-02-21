@@ -38,7 +38,7 @@ export default function MovieCard({ movie }) {
         <div className={`card-details ${showDetails ? 'visible' : ''}`}>
           <p><strong>Release Date:</strong> {release_date}</p>
           <p><strong>Vote Count:</strong> {vote_count}</p>
-          <p><strong>Vote Average:</strong> {vote_average}</p>
+          <p><strong>Ratings :</strong> {vote_average}</p>
         </div>
       </li>
     </div>

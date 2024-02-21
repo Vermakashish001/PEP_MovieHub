@@ -1,14 +1,71 @@
 .homebtns{
-    height: 90vh;
     display: flex;
     background: white;
 }
 .homebtns .carousel{
-    height: 90vh;
+    height: 67vh;
     width: 50vw;
+    position: relative;
+    border: 1px solid black;
 }
-.homebtns .carousel:hover{
-    width: 75vw;
+.homebtns .heading{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.489);
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    z-index: 100;
+}
+.homebtns .m-heading{
+    left: 20%;
+}
+.homebtns .t-heading{
+    left: 72%;
+}
+.recommendation .rec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.recommendation .rec-heading{
+    text-align: center;
+    color: #ba0c0c;
+    font-size: 3rem;
+    padding: 1rem;
+    border-bottom: 2px solid #ba0c0c;
+}
+.recommendation .card{
+    border: 2px solid #ba0c0c;
+    border-radius: 8px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: antiquewhite;
+    margin: 5px;
     transition: all 0.5s ease-in-out;
+    padding: 0%;
+    
+}
 
+.recommendation .card:hover{
+    scale: 1.05;
+    box-shadow: 0 10px 20px 0 var(--main-color);
+}
+.recommendation .card img{
+    width: 98%;
+    height: 98%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.recommendation .rec h1{
+    width: 100%;
+    text-align: center;
+    display:block !important;
+    color: #ba0c0c;
+    font-size: 2.5rem;
 }

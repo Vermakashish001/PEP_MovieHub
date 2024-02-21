@@ -38,7 +38,7 @@ export default function TvCard({ tv }) {
         <div className={`card-details ${showDetails ? 'visible' : ''}`}>
           <p><strong>First Air Date:</strong> {first_air_date}</p>
           <p><strong>Vote Count:</strong> {vote_count}</p>
-          <p><strong>Vote Average:</strong> {vote_average}</p>
+          <p><strong>Ratings:</strong> {vote_average}</p>
         </div>
       </li>
     </div>

@@ -9,9 +9,10 @@
     transition: all 0.2s ease-in-out;
   }
   .tvlist{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    grid-auto-flow: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding: 0%;
+    justify-content: center;
   }
    
