@@ -9,7 +9,6 @@ import FavMovie from './pages/FavMovie/FavMovie'
 import FavTv from './pages/FavTv/FavTv'
 
 
-
 export default function App() {
   const [movies, setMovies] = useState([])
   const [series, setSeries] = useState([])
@@ -66,20 +65,17 @@ export default function App() {
       console.log("error", error)
     }
   }
-  const handlePageChange = (page) => {
-    setCurrentMoviePage(page)
-    
-  }
+
   return (
     <div>
 
       <BrowserRouter>
-        <Navbar onSearch={handleMovieSearch} />
+        <Navbar onSearch={handleMovieSearch} onTvSearch={handleTvSearch} />
         <Routes>
           <Route path='/' element={<Home movie={movies} series={series} />} />
           <Route path="/movie" element={<div>
             <MovieList movies={movies} />
-            <Pagination page={currentMoviePage} totalPages={totalMoviePages} setPage={handlePageChange} />
+            <Pagination page={currentMoviePage} totalPages={totalMoviePages} setPage={setCurrentMoviePage} />
           </div>} />
           <Route path='/favmov' element={<FavMovie />} />
           <Route path='tv' element={

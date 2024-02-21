@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import "./Navbar.css";
-export default function Navbar({ onSearch }) {
+export default function Navbar({ onSearch,onTvSearch }) {
   const [query, setQuery] = React.useState("");
+  const [query1, setQuery1] = React.useState("");
   const handleSearch = () => {
     onSearch(query);
+    onTvSearch(query1);
+  };
+  const func = (e) => {
+    setQuery(e.target.value);
+    setQuery1(e.target.value);
   };
   return (
     <nav className="navbar">
@@ -32,7 +38,7 @@ export default function Navbar({ onSearch }) {
         <input
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={func}
           placeholder="Search anything..."
         />
         <button className="search-button" onClick={handleSearch}>
