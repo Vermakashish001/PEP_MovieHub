@@ -27,8 +27,8 @@ export default function FavTv() {
   }, [])
   
   return (
-    <div>
-      <h1>Favorite TV Series</h1>
+    <div className='fav'>
+      <h1 className='heading'>Favorite TV Series</h1>
       {favoriteSeriesIDs.length > 0 ? (
         <Tvlist series={fav} />
       ) : (

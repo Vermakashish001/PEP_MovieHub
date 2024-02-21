@@ -26,9 +26,9 @@ export default function FavMovie() {
 
 
   return (
-    <div>
-      <h1>Favorite Movies</h1>
-      {fav.length > 0 ? (
+    <div className = 'fav' >
+      <h1 className= 'heading'>Favorite Movies</h1>
+      {fav.length  > 0 ? (
         <MovieList movies={fav} />
       ) : (
         <h1>No movies selected</h1>

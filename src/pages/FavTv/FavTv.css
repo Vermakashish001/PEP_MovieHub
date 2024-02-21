@@ -1,3 +1,12 @@
-div h1{
+.fav .heading{
+    text-align: center;
+    color: #ba0c0c;
+    font-size: 3rem;
+    padding: 1rem;
+    border-bottom: 2px solid #ba0c0c;
+}
+
+.fav h1{
+    text-align: center;
     color: white;
 }

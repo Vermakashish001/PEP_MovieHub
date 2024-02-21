@@ -10,25 +10,29 @@ export default function Home({ movie, series }) {
   return (
     <>
       <div className="homebtns">
-        <h1 className="m-heading heading">Movies</h1>
-        <h1 className="t-heading heading">TV Shows</h1>
         <Carousel
           className="carousel"
           showThumbs={false}
           infiniteLoop={true}
           autoPlay={true}
-          interval={1000}
+          interval={3000}
           showStatus={false}
           showIndicators={false}
-          onClickItem={(index) => navigate(`/movie`)}
         >
           {movie.map((movie, index) => {
             return (
               <div key={index}>
+                <div className='details'>
+                <h2>{movie.title}</h2>
+                <p>{movie.overview}</p>
+                <p>{movie.vote_average} &#9733;</p>
+                </div>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
-                />
+                >
+                
+                </img>
               </div>
             );
           })}
@@ -39,18 +43,22 @@ export default function Home({ movie, series }) {
           showIndicators={false}
           infiniteLoop={true}
           autoPlay={true}
-          interval={1500}
+          interval={3000}
           showStatus={false}
-          onClickItem={(index) => navigate(`/tv`)}
         >
           {series.map((serie, index) => {
             return (
               <div key={index}>
+                <div className='details'>
+                <h2>{serie.name}</h2>
+                <p>{serie.overview}</p>
+                <p>{serie.vote_average} &#9733;</p>
+                </div>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
                   alt={serie.name}
-                  onClick={() => navigate(`/tv/${serie.id}`)}
                 />
+                
               </div>
             );
           })}
